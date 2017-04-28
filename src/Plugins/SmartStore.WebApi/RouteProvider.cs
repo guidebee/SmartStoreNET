@@ -15,7 +15,10 @@ namespace SmartStore.WebApi
 				new[] { "SmartStore.WebApi.Controllers" }
 			)
 			.DataTokens["area"] = WebApiGlobal.PluginSystemName;
-		}
+
+		    SwaggerConfig.Register();
+
+        }
 		public int Priority
 		{
 			get
