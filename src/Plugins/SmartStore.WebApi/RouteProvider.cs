@@ -11,22 +11,18 @@ namespace SmartStore.WebApi
         public void RegisterRoutes(RouteCollection routes)
         {
 
+            routes.MapRoute("SmartStore.WebApi.Action",
+                        "Plugins/SmartStore.WebApi/{action}",
+                        new { controller = "WebApi" },
+                        new[] { "SmartStore.WebApi.Controllers" }
+                    )
+            .DataTokens["area"] = WebApiGlobal.PluginSystemName;
             SwaggerConfig.Register();
-
-
             routes.MapHttpRoute("WebApi.ExtraApi", "api/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = RouteParameter.Optional });
-
-
         }
 
 
-        public int Priority
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        public int Priority => 0;
     }
 }
