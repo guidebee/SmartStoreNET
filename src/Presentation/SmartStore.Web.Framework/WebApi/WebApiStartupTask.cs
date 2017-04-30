@@ -50,21 +50,21 @@ namespace SmartStore.Web.Framework.WebApi
 			//config.Services.Insert(typeof(ModelBinderProvider), 0,
 			//	new SimpleModelBinderProvider(typeof(Address), new AddressModelBinder()));
 
-			try
-			{
-				if (!config.Routes.ContainsKey(WebApiGlobal.RouteNameUploads))
-				{
-					config.Routes.MapHttpRoute(WebApiGlobal.RouteNameUploads, "api/{version}/Uploads/{action}/{id}",
-						new { version = "v1", controller = "Uploads", action = "Index", id = RouteParameter.Optional });
-				}
+			//try
+			//{
+			//	if (!config.Routes.ContainsKey(WebApiGlobal.RouteNameUploads))
+			//	{
+			//		config.Routes.MapHttpRoute(WebApiGlobal.RouteNameUploads, "api/{version}/Uploads/{action}/{id}",
+			//			new { version = "v1", controller = "Uploads", action = "Index", id = RouteParameter.Optional });
+			//	}
 
-				if (!config.Routes.ContainsKey(WebApiGlobal.RouteNameDefaultApi))
-				{
-					config.Routes.MapHttpRoute(WebApiGlobal.RouteNameDefaultApi, "api/{version}/{controller}/{id}",
-						new { version = "v1", controller = "Home", id = RouteParameter.Optional });
-				}
-			}
-			catch (Exception) { }
+			//	if (!config.Routes.ContainsKey(WebApiGlobal.RouteNameDefaultApi))
+			//	{
+			//		config.Routes.MapHttpRoute(WebApiGlobal.RouteNameDefaultApi, "api/{version}/{controller}/{id}",
+			//			new { version = "v1", controller = "Home", id = RouteParameter.Optional });
+			//	}
+			//}
+			//catch (Exception) { }
 
 			try
 			{
